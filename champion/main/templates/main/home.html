@@ -1,0 +1,148 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block title %} главная {% endblock %} 
+
+{% block content %}
+<div class="hero">
+  <div class="hero__container">
+    <div class="hero__info">
+      <h1 class="hero__title">место где растут<br />чемпионы</h1>
+      <p class="hero__text">
+        Обучаем тхэквондо и кикбоксингу с нуля под руководством опытных
+        тренеров. Современный зал, сильное окружение и уверенность в каждом
+        движении.
+      </p>
+    </div>
+    <div class="hero__image-wrapper">
+      <img width="170px" height="170px" src="{% static 'main/images/hero_image.png' %}" alt="фото клуба" class="hero__img">
+    </div>
+  </div>
+  <a href="#" class="hero__button">первая тренировка →</a>
+</div>
+
+<div class="trainers">
+  <h1 class="trainers__title">тренерский состав</h1>
+
+  {% for trainer in trainers %}
+  <input
+    type="radio"
+    name="slider"
+    id="slide-{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
+  {% endfor %}
+
+  <div class="trainers__slider">
+    <div class="trainers__slides-wrapper">
+      {% for trainer in trainers %}
+      <div class="trainers__slide trainer-card">
+        <div class="trainer-card__image-wrapper">
+          <img
+            class="trainer-card__image"
+            src="{{ trainer.photo.url }}"
+            alt=""
+          />
+        </div>
+        <div class="trainer-card__info">
+          <div class="trainer-card__name">{{ trainer.name|safe }}</div>
+          <div class="trainer-card__description">{{ trainer.description }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="trainers__controls">
+    {% for trainer in trainers %}
+    <label
+      class="trainers__control-button"
+      for="slide-{{ forloop.counter }}"
+    ></label>
+    {% endfor %}
+  </div>
+</div>
+
+{% block extra_css_trainers %}
+<style>
+  {% for trainer in trainers %}
+    #slide-{{ forloop.counter }}:checked ~ .trainers__slider .trainers__slides-wrapper {
+      transform: translateX(-{{ forloop.counter0 }}00%);
+    }
+  {% endfor %}
+  {% for trainer in trainers %}
+    #slide-{{ forloop.counter }}:checked ~ .trainers__controls .trainers__control-button[for="slide-{{ forloop.counter }}"] {
+      background-color: var(--primary);
+    }
+  {% endfor %}
+</style>
+{% endblock %}
+
+<div class="contacts">
+  <h1 class="contacts__title">наши контакты</h1>
+  <div class="contacts__container">
+    <div class="contacts__info">
+      {% for contact in contacts %}
+      <a href='tel:{{contact.number}}' class="contacts__contact">
+        <h2 class="contacts__post">{{ contact.post }}</h2>
+        <p class="contacts__name">{{ contact.name }}</p>
+        <p class="contacts__number">{{ contact.number }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="contacts__geotag">
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec1518fd0e8cb57330481f380bd63fa9eb53c7fd7cb3d1fcb056bf4287ae07ff&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="gym-gallery">
+  <h1 class="gym-gallery__title">галерея зала</h1>
+
+  {% for gym_photo in gym_gallery %}
+  <input
+    type="radio"
+    name="gym-slider"
+    id="gym-slide-{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
+  {% endfor %}
+
+  <div class="gym-gallery__slider">
+    <div class="gym-gallery__slides-wrapper">
+      {% for gym_photo in gym_gallery %}
+      <div class="gym-gallery__slide">
+        <div class="gym-gallery__image-wrapper">
+          <img
+            class="gym-gallery__image"
+            src="{{gym_photo.photo.url}}"
+            alt=""
+          />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="gym-gallery__controls">
+    {% for gym_photo in gym_gallery %}
+    <label
+      class="gym-gallery__control-button"
+      for="gym-slide-{{ forloop.counter }}">
+    </label>
+    {% endfor %}
+  </div>
+</div>
+
+{% block extra_css_gym_gallery %}
+<style>
+  {% for gym_photo in gym_gallery %}
+    #gym-slide-{{ forloop.counter }}:checked ~ .gym-gallery__slider .gym-gallery__slides-wrapper {
+      transform: translateX(-{{ forloop.counter0 }}00%);
+    }
+  {% endfor %}
+  {% for gym_photo in gym_gallery %}
+    #gym-slide-{{ forloop.counter }}:checked ~ .gym-gallery__controls .gym-gallery__control-button[for="gym-slide-{{ forloop.counter }}"] {
+      background-color: var(--primary);
+    }
+  {% endfor %}
+</style>
+{% endblock %}
+
+{% endblock %}

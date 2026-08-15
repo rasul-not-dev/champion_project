@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чемпион - {% block title %} {% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% block extra_css_trainers %}{% endblock %}
+  {% block extra_css_gym_gallery %}{% endblock %}
+  <script src="https://kit.fontawesome.com/cecf21d759.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <input type="checkbox" id="burger-toggle" class="burger-toggle">
+
+    <header class="header">
+      <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Логотип Чемпион" class="logo__image">
+        <h1 class="logo__title">чемпион</h1>
+      </div>
+      <label for="burger-toggle" class="burger-menu">
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
+      </label>
+    </header>
+
+    <aside class="aside">
+      <nav class="menu">
+        <ul class="menu__list">
+          {% for link in nav_links %}
+            <li class="menu__item">
+              <a href="{% url link.url_name %}" class="menu__link"><i class="{{ link.icon }}"></i> {{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="blurblock">
+      <main class="main-content">
+        {% block content %} {% endblock %}
+      </main>
+
+      <footer class="footer">
+        <div class="contacts-icons">
+          <a href="#" class="contacts-icons__link"><img src="{% static 'images/vk.svg' %}" alt="VK" class="contacts-icons__img"></a>
+          <a href="#" class="contacts-icons__link"><img src="{% static 'images/tg.svg' %}" alt="Telegram" class="contacts-icons__img"></a>
+          <a href="#" class="contacts-icons__link"><img src="{% static 'images/inst.svg' %}" alt="Instagram" class="contacts-icons__img"></a>
+        </div>
+
+        <nav class="footer-nav">
+          {% for link in nav_links %}
+            <a href="{% url link.url_name %}" class="footer-nav__link">{{ link.title }}</a>
+          {% endfor %}
+        </nav>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>
