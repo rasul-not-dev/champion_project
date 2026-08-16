@@ -1,0 +1,94 @@
+
+@mixin tablet {
+    @media (min-width: 500px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+
+.news-page {
+    &__title {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 1.0996441281138791rem + 1.779359430604982vw, 2.125rem);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 0 auto;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__news-empty-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    box-shadow: 0 0px 12px 8px rgba(255, 255, 255, 0.08);
+
+    &__image-wrapper {
+        overflow: hidden;
+        height: 200px;
+        border-radius: 20px;
+        border-bottom: 1px solid var(--primary);
+        flex-shrink: 0;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__info {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+    }
+
+    &__text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: white;
+    }
+
+    &__link {
+        margin-top: auto;
+    }
+}
+
+
+

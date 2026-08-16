@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} новости {% endblock %}
+
+{% block content %}
+
+<div class="news-detail">
+    <div class="news-detail__title">{{ news.title }} <a href="{% url 'news'%}" class="news-detail__link">×</a></div>
+    <div class="news-detail__container">
+        <div class="news-detail__image-wrapper">
+            <img src="{{ news.image.url }}" alt="фотография новости" class="news-detail__image">
+        </div>
+        <div class="news-detail__info">
+            <p class="news-detail__text"><span class="news-detail__date">{{ news.created_at|date:"d.m.Y" }}</span> {{ news.content }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

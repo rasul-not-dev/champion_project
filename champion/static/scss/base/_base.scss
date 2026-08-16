@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+/* ======= БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ ========= */
+
+:root {
+    --primary: #FFF400;
+    --secondary: #262626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--secondary);    
+}
+
+.wrapper {
+    background-color: var(--secondary);
+    position: relative;
+    max-width: 1440px;
+    margin-top: 50px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.main-content {
+    border: 1px solid var(--primary);
+    padding: 20px;
+    padding-bottom: 30px;
+    color: var(--primary);
+    margin-top: 50px;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* ============= ХЕДЕР =============== */
+
+.header {
+    height: 50px;
+    background-color: var(--primary);
+    padding-inline: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo__image {
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.logo__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary);
+    padding-bottom: 5px;
+}
+
+.burger-menu {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.burger-menu__line {
+    height: 5px;
+    border-radius: 2px;
+    background-color: var(--secondary);
+}
+
+
+/* ================= ФУТЕР ================= */
+
+.footer {
+    height: 30px;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.contacts-icons {
+    display: flex;
+    gap: 5px;
+    height: 15px;
+    align-items: center;
+}
+
+.contacts-icons__img {
+    width: 15px;
+    height: 15px;
+}
+
+.footer-nav {
+    gap: 0.375rem;
+    gap: clamp(0.375rem, 0.01467971530249107rem + 1.601423487544484vw, 0.9375rem);    
+    display: flex;
+    align-items: center;
+}
+
+.footer-nav__link {
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.footer-nav__link:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =============== АСАЙД МЕНЮ ================ */
+
+.aside {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 20%;
+    min-width: 320px;
+    background-color: var(--primary);
+    border-radius: 20px;
+    transition: left 0.3s ease;
+    z-index: 10;
+    border: solid 1px var(--secondary);
+    transform: translateX(-50%);
+}
+
+.aside__menu {
+    padding-block: 30px;
+}
+
+.aside__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 30px;
+}
+
+.aside__desktop-logo-component {
+    display: none;
+}
+
+.aside__link {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.aside__link:hover {
+    transform: translateX(5px);
+}
+
+
+/* ============== ЛОГИКА АНИМАЦИИ НАВИГАЦИИ =============== */
+
+.burger-toggle {
+    display: none;
+}
+
+.burger-toggle:checked~.header .burger-menu {
+    transform: rotate(360deg);
+}
+
+.burger-toggle:checked~.header .burger-menu__line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 9px);
+}
+
+.burger-toggle:checked~.header .burger-menu__line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-toggle:checked~.header .burger-menu__line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -9px);
+}
+
+.burger-toggle:checked~.main-content,
+.burger-toggle:checked~.footer {
+    filter: blur(5px);
+}
+
+.burger-toggle:checked~.aside {
+    left: 50%;
+}
+
+.main-content, .footer {
+    transition: filter 0.3s ease;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+
+    .main-content {
+        padding-inline: 40px;
+    }
+    
+    .footer {
+        height: 40px;
+    }
+    
+    .footer-nav__link {
+        font-size: 14px;
+    }
+}
+
+
+
+@media (min-width: 922px) {
+    
+    .wrapper {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    
+    .footer {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+    
+    .main-content {
+        padding-inline: 30px;
+        margin-left: calc(20% + 40px);
+        margin-top: 30px;
+        border: none;
+        padding-block: 0;  
+    }
+    
+    .aside {
+        left: 0;
+        margin-left: 30px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        border: solid 1px var(--primary);
+        background-color: var(--secondary);
+        transform: translateX(0);
+        min-width: auto;
+        box-shadow: 0 0px 12px 10px rgba(255, 255, 255, 0.08);
+        
+    }
+    
+    .aside__link {
+        font-size: 1.125rem;
+        font-size: clamp(1.125rem, 0.4575289575289575rem + 1.1583011583011584vw, 1.5rem);
+        color: var(--primary);
+    }
+
+    .aside__menu {
+        border: solid 1px var(--primary);
+        border-radius: 20px;
+        position: sticky;
+        top: 0;
+    }
+
+    .aside__list {
+        padding-left: 0.9375rem;
+        padding-left: clamp(0.9375rem, -0.7311776061776063rem + 2.8957528957528957vw, 1.875rem);
+    }
+
+    .aside__desktop-logo-component {
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+        font-size: 0.625rem;
+        font-size: clamp(0.625rem, 0.06877413127413123rem + 0.9652509652509652vw, 0.9375rem);
+    }
+
+    .aside__desktop-logo-component::first-line {
+        font-size: 1.5625rem;
+        font-size: clamp(1.5625rem, -0.1061776061776063rem + 2.8957528957528957vw, 2.5rem);
+        color: var(--primary);
+    }
+
+}

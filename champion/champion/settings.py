@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-ymmg3yxl*ta!o$!t%ihce(lxsr#sxkj6i4xobq-tre1l&%x=b!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.100.242', 'localhost', '*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'news.apps.NewsConfig',
     'phonenumber_field',
 ]
 
@@ -51,7 +52,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'main.context_processors.nav_links',
+                'champion.context_processors.nav_links',
+                'champion.context_processors.social_media_icons',
             ],
         },
     },

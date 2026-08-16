@@ -33,3 +33,4 @@ class GymGallery(models.Model):
     class Meta():
         verbose_name = "Фотография зала"
         verbose_name_plural = "Фотографии зала"
+

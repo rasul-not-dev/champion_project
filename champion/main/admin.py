@@ -5,4 +5,3 @@ admin.site.register(Trainer)
 admin.site.register(Contacts)
 admin.site.register(GymGallery)
 
-

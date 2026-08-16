@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} новости {% endblock %}
+
+{% block content %}
+  <div class="news-page">
+    <h1 class="news-page__title">новости клуба</h1>
+    <div class="news-page__grid">
+      {% for card in news %}
+      <section class="news-page__item news-card">
+        <div class="news-card__image-wrapper">
+          <img src="{{ card.image.url }}" alt="картинка новости" class="news-card__image">
+        </div>
+        <div class="news-card__info">
+          <p class="news-card__text">{{ card.content }}</p>
+          <a href="{% url 'news_detail' card.slug %}" class="news-card__link">Читать детальнее ></a>
+        </div>
+      </section>
+      {% empty %}
+        <p class="news-page__news-empty-text">новостей пока нет</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
