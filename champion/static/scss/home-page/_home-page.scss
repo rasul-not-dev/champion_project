@@ -68,18 +68,19 @@
 
 .hero__button {
     border: solid 1px var(--primary);
-    border-radius: 5px;
+    border-radius: 10px;
     padding-block: 5px 6px;
     padding-inline: 10px;
     display: block;
     width: fit-content;
     margin-inline: auto;
-    font-size: 10px;
+    font-size: 0.625rem;
+    font-size: clamp(0.625rem, 0.22321428571428575rem + 1.7857142857142856vw, 1.25rem);
+    box-shadow: var(--shadowbox);
 }
 
 .hero__button:hover {
-    background-color: #7c7600;
-    color: var(--secondary);
+    transform: scale(1.05);
     transition: all 0.3s ease;
 }
 
@@ -176,6 +177,7 @@ input[type="radio"] {
     border-radius: 50%;
     border: solid 2px var(--primary);
     cursor: pointer;
+    box-shadow: var(--shadowbox);
 }
 
 
@@ -297,6 +299,7 @@ input[type="radio"] {
     border-radius: 50%;
     border: solid 2px var(--primary);
     cursor: pointer;
+    box-shadow: var(--shadowbox);
 }
 
 .hero__container,
@@ -304,7 +307,7 @@ input[type="radio"] {
 .contacts__geotag,
 .contacts__info,
 .gym-gallery__slider {
-    box-shadow: 0 0px 12px 10px rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadowbox);
 }
 
 @media (min-width: 768px) {

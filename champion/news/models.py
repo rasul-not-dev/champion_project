@@ -2,7 +2,7 @@ from django.db import models
 from pytils.translit import slugify
 
 class News(models.Model):
-    title = models.CharField("Заголовок", max_length=50)
+    title = models.CharField("Заголовок", max_length=21)
     slug = models.SlugField("Слаг", max_length=100, unique=True, blank=True)
     image = models.ImageField("Картинка", upload_to='events/')
     content = models.TextField("Описание")

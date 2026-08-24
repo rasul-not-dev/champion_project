@@ -4,8 +4,9 @@
 /* ======= БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ ========= */
 
 :root {
-    --primary: #FFF400;
+    --primary: #fff400;
     --secondary: #262626;
+    --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
 }
 
 * {
@@ -279,7 +280,7 @@ body::-webkit-scrollbar {
         background-color: var(--secondary);
         transform: translateX(0);
         min-width: auto;
-        box-shadow: 0 0px 12px 10px rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0px 12px 10px rgba(255, 244, 0, 0.08);
         
     }
     
