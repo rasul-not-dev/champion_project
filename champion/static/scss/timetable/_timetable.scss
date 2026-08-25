@@ -1,0 +1,100 @@
+@mixin tablet-desktop {
+    @media (min-width: 769px) {
+        @content
+    }
+}
+
+.timetable {
+    max-width: 800px;
+    margin: 0 auto;
+
+    &__title {
+        // 24 --- 34
+        font-size: clamp(1.5rem, 1.2916666666666667rem + 0.9259259259259258vw, 2.125rem);
+        color: var(--primary);
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__accordion {
+        width: 100%;
+    }
+
+    .accordion {
+
+        border: solid 1px var(--primary);
+        box-shadow: var(--shadowbox);
+        // 10 --- 20
+        border-radius: clamp(0.625rem, 0.4166666666666667rem + 0.9259259259259258vw, 1.25rem);
+
+
+        &__header {
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            list-style: none; // для фаерфокс и сафари
+
+            @include tablet-desktop {
+                padding: 20px 20px;
+            }
+
+            &::-webkit-details-marker {
+                display: none; // для остальных браузеров
+            }
+        }
+
+        &__title, &__icon {
+            // 12 --- 20
+            font-size: clamp(0.75rem, 0.5833333333333333rem + 0.7407407407407408vw, 1.25rem);
+            font-weight: bold;
+        }
+
+        &__icon {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        &[open] {
+            .accordion__icon {
+                transform: rotate(180deg);
+            }
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            text-align: center;
+            padding: 16px;
+            border-top: 1px solid rgba(255, 230, 0, 0.15);
+        }
+
+        &__col {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: clamp(0.75rem, 0.5833333333333333rem + 0.7407407407407408vw, 1.25rem);
+        }
+
+        &__day {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        &__time {
+            color: white;
+            margin: auto 0;
+            
+        }
+
+    }
+}

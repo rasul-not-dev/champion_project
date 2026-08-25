@@ -7,10 +7,16 @@
   --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
 }
 
+::selection {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -149,8 +155,8 @@ body::-webkit-scrollbar {
   border-radius: 20px;
   transition: left 0.3s ease;
   z-index: 10;
-  border: solid 1px var(--secondary);
   transform: translateX(-50%);
+  box-shadow: 0 0px 10px 10px rgba(255, 244, 0, 0.2);
 }
 
 .aside__menu {
@@ -250,6 +256,7 @@ body::-webkit-scrollbar {
     left: 0;
     margin-left: 30px;
     height: 100%;
+    min-height: 92vh;
     position: absolute;
     top: 0;
     border: solid 1px var(--primary);
@@ -668,6 +675,10 @@ input[type=radio] {
 .news-detail__link {
   font-size: 1.75rem;
   font-size: clamp(1.75rem, 1.5416666667rem + 0.9259259259vw, 2.375rem);
+  transition: all 0.2s ease;
+}
+.news-detail__link:hover {
+  transform: scale(1.1);
 }
 .news-detail__container {
   display: flex;
@@ -774,4 +785,78 @@ input[type=radio] {
 }
 .news-card__link {
   margin-top: auto;
+}
+
+.timetable {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.timetable__title {
+  font-size: clamp(1.5rem, 1.2916666667rem + 0.9259259259vw, 2.125rem);
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.timetable__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.timetable__accordion {
+  width: 100%;
+}
+.timetable .accordion {
+  border: solid 1px var(--primary);
+  box-shadow: var(--shadowbox);
+  border-radius: clamp(0.625rem, 0.4166666667rem + 0.9259259259vw, 1.25rem);
+}
+.timetable .accordion__header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+@media (min-width: 769px) {
+  .timetable .accordion__header {
+    padding: 20px 20px;
+  }
+}
+.timetable .accordion__header::-webkit-details-marker {
+  display: none;
+}
+.timetable .accordion__title, .timetable .accordion__icon {
+  font-size: clamp(0.75rem, 0.5833333333rem + 0.7407407407vw, 1.25rem);
+  font-weight: bold;
+}
+.timetable .accordion__icon {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.timetable .accordion[open] .accordion__icon {
+  transform: rotate(180deg);
+}
+.timetable .accordion__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid rgba(255, 230, 0, 0.15);
+}
+.timetable .accordion__col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: clamp(0.75rem, 0.5833333333rem + 0.7407407407vw, 1.25rem);
+}
+.timetable .accordion__day {
+  color: var(--primary);
+  font-weight: bold;
+}
+.timetable .accordion__time {
+  color: white;
+  margin: auto 0;
 }/*# sourceMappingURL=main.css.map */

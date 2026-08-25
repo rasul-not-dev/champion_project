@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}расписание{% endblock title %}
+
+
+{% block content %}
+
+<div class="timetable">
+    <h1 class="timetable__title">расписание тренировок</h1>
+    <div class="timetable__container">
+        {% for item in timetable %}
+        <details class="timetable__accordion accordion">
+            <summary class="accordion__header">
+                <span class="accordion__title">{{ item.name }}</span>
+                <span class="accordion__icon"><i class="fa-solid fa-angle-down" style="color: var(--primary);"></i></span>
+            </summary>
+            <div class="accordion__grid">
+                {% for day in item.formated_days %}
+                <div class="accordion__col">
+                    <span class="accordion__day">{{ day.label }}</span>
+                    <span class="accordion__time">{{ day.value }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </details>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

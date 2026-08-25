@@ -9,10 +9,16 @@
     --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
 }
 
+::selection {
+  background-color: var(--primary);
+  color: var(--secondary); 
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -156,8 +162,8 @@ body::-webkit-scrollbar {
     border-radius: 20px;
     transition: left 0.3s ease;
     z-index: 10;
-    border: solid 1px var(--secondary);
     transform: translateX(-50%);
+    box-shadow: 0 0px 10px 10px rgba(255, 244, 0, 0.2);
 }
 
 .aside__menu {
@@ -274,6 +280,7 @@ body::-webkit-scrollbar {
         left: 0;
         margin-left: 30px;
         height: 100%;
+        min-height: 92vh;
         position: absolute;
         top: 0;
         border: solid 1px var(--primary);

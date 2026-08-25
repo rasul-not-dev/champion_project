@@ -25,8 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # приложения
     'main.apps.MainConfig',
     'news.apps.NewsConfig',
+    'timetable.apps.TimetableConfig',
+
+    # сторонние библиотеки
     'phonenumber_field',
 ]
 
