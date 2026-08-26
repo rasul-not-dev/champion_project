@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'news.apps.NewsConfig',
     'timetable.apps.TimetableConfig',
+    'reviews.apps.ReviewsConfig',
 
     # сторонние библиотеки
     'phonenumber_field',
@@ -102,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
