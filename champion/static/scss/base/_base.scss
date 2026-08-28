@@ -7,6 +7,8 @@
     --primary: #fff400;
     --secondary: #262626;
     --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
+    --border: solid 1px var(--primary);
+    --textshadow: 0 0 8px rgba(255, 215, 0, 0.4)
 }
 
 ::selection {
@@ -50,6 +52,7 @@ body {
     padding-bottom: 30px;
     color: var(--primary);
     margin-top: 50px;
+    min-height: calc(100vh - 80px);
 }
 
 html::-webkit-scrollbar,

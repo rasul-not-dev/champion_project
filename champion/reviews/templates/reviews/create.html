@@ -4,26 +4,29 @@
 
 {% block content %}
 
-<form method="post" class="reviews-form">
-  {% csrf_token %}
+<div class="create">
+  <h1 class="create__title">оставить отзыв</h1>
+  <form method="post" class="create__form">
+    {% csrf_token %}
 
-  <!-- Поле оценки (звёзды) -->
-  <div class="rating-group">
-    {{ form.rating }}
-  </div>
+    <div class="create__rating-group">
+      {% for radio in form.rating %}
+        <div class="create__rating-item">
+          <label for="{{ radio.id_for_label }}" class="create__rating-label">
+            {{ radio.tag }} <!-- класс подставляем через forms.py -->
+            <span class="create__rating-text">{{ radio.choice_label }}</span>
+          </label>
+        </div>
+      {% endfor %}
+    </div>
 
-  <!-- Поле имени -->
-  <div class="form-field">
     {{ form.name }}
-  </div>
 
-  <!-- Поле комментария -->
-  <div class="form-field">
     {{ form.comment }}
-  </div>
 
-  <button type="submit" class="submit-btn">оставить свой отзыв</button>
-</form>
-
+    <button class="create__button" type="submit">отправить</button>
+  </form>
+</div>
 
 {% endblock content %}
+

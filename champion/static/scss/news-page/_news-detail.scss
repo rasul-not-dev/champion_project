@@ -19,12 +19,14 @@
         justify-content: center;
         margin-bottom: 20px;
         font-weight: bold;
+        text-shadow: var(--textshadow);
     }
 
     &__link {
         font-size: 1.75rem;
         font-size: clamp(1.75rem, 1.5416666666666667rem + 0.9259259259259258vw, 2.375rem);
         transition: all .2s ease;
+        text-shadow: var(--textshadow);
 
         &:hover {
             transform: scale(1.1);

@@ -12,17 +12,20 @@ class ReviewsForm(forms.ModelForm):
 
         widgets = {
             'name': forms.TextInput(attrs={
-                'class': 'create__input',
-                'plaсeholder': 'имя',
+                'class': 'create__name',
+                'placeholder': 'имя',
             }),
 
             'comment': forms.Textarea(attrs={
-                'class': 'create__textarea',
-                'plaсeholder': 'комментарий',
+                'class': 'create__comment',
+                'placeholder': 'комментарий',
             }),
 
             'rating': forms.RadioSelect(
-                choices = [(i, str(i)) for i in range(5, 0, -1)]
+                choices = [(i, str(i)) for i in range(5, 0, -1)],
+                attrs={
+                    'class': 'create__rating-radio', # Добавляет класс к главному блоку
+                }
             )
         }
 

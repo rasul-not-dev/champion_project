@@ -361,6 +361,7 @@ input[type="radio"] {
     .gym-gallery__title {
         font-size: 1.5rem;
         font-size: clamp(1.5rem, 0.8325289575289575rem + 1.1583011583011584vw, 1.875rem);
+        text-shadow: var(--textshadow);
     }
 
     .hero__title--small,

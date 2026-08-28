@@ -4,6 +4,7 @@ from .models import Reviews
 @admin.register(Reviews)
 class ReviewsAdmin(admin.ModelAdmin):
     list_display = ['name', 'short_comment', 'rating', 'created_at']
+    list_display_links = ['name', 'short_comment']
     exclude = ['created_at']
     search_fields = ['name']
 

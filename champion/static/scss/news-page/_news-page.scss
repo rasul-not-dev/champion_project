@@ -17,6 +17,7 @@
         font-size: clamp(1.5rem, 1.0996441281138791rem + 1.779359430604982vw, 2.125rem);
         text-align: center;
         margin-bottom: 20px;
+        text-shadow: var(--textshadow);
     }
 
     &__grid {
