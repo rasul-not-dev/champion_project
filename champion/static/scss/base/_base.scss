@@ -8,7 +8,8 @@
     --secondary: #262626;
     --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
     --border: solid 1px var(--primary);
-    --textshadow: 0 0 8px rgba(255, 215, 0, 0.4)
+    --textshadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    --title: clamp(1.5rem, 1.0996441281138791rem + 1.779359430604982vw, 2.125rem);
 }
 
 ::selection {

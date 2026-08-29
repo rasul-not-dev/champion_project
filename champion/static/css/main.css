@@ -6,7 +6,8 @@
   --secondary: #262626;
   --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
   --border: solid 1px var(--primary);
-  --textshadow: 0 0 8px rgba(255, 215, 0, 0.4) ;
+  --textshadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  --title: clamp(1.5rem, 1.0996441281138791rem + 1.779359430604982vw, 2.125rem);
 }
 
 ::selection {
@@ -867,6 +868,93 @@ input[type=radio] {
 }
 .news-card__link {
   margin-top: auto;
+}
+
+.reviews {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.reviews__title {
+  font-weight: bold;
+  text-shadow: var(--textshadow);
+  text-align: center;
+  font-size: var(--title);
+}
+.reviews__summary {
+  border: var(--border);
+  padding: 15px 20px;
+  box-shadow: var(--shadowbox);
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.reviews__avg-rating {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: var(--textshadow);
+  display: block;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+.reviews__button {
+  display: block;
+  border: var(--border);
+  box-shadow: var(--shadowbox);
+  text-shadow: var(--textshadow);
+  font-weight: bold;
+  width: max(fit-content, 75%);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+}
+.reviews__button:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+.reviews__comments {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.reviews__comment {
+  width: 100%;
+}
+.reviews .comment {
+  border: var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadowbox);
+  padding: 15px;
+}
+.reviews .comment__header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.reviews .comment__rating {
+  font-size: 16px;
+}
+.reviews .comment__star {
+  text-shadow: var(--textshadow);
+}
+.reviews .comment__star--disable {
+  color: gray;
+}
+.reviews .comment__star--enabled {
+  color: var(--primary);
+}
+.reviews .comment__name {
+  font-size: 14px;
+  font-weight: regular;
+  text-shadow: var(--textshadow);
+}
+.reviews .comment__text {
+  font-size: 14px;
+  color: white;
 }
 
 .create {

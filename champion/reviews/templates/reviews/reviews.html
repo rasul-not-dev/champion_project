@@ -4,4 +4,57 @@
 
 {% block content %}
 
+<div class="reviews">
+  <h1 class="reviews__title">отзывы</h1>
+
+  <div class="reviews__summary">
+    <span class="reviews__avg-rating">★ {{ avg_rating }} на основе {{ total_count }} отзывов</span>
+    <a href="{% url 'create' %}" class="reviews__button">оставить свой отзыв</a>
+  </div>
+
+  <div class="reviews__comments">
+    {% for review in reviews %}
+      <div class="reviews__comment comment">
+        <div class="comment__header">
+          <div class="comment__rating">
+            {% for star in stars %}
+              {% if review.rating >= star %}
+                <span class="comment__star comment__star--enabled">★</span>
+              {% else %}
+                <span class="comment__star comment__star--disable">★</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <span class="comment__name">{{ review.name }}</span>
+        </div>
+        <p class="comment__text">{{ review.comment }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
 {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="comment">
+  {% for star in stars %}  
+    {% if review.rating >= star %}
+      <span>ода</span>
+    {% else %}
+      <span>онет</span>
+    {% endif %}
+  {% endfor %}
+</div> -->
