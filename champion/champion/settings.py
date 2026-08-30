@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'timetable.apps.TimetableConfig',
     'reviews.apps.ReviewsConfig',
+    'payment.apps.PaymentConfig',
 
     # сторонние библиотеки
     'phonenumber_field',

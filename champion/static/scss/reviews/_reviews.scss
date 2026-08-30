@@ -1,5 +1,5 @@
 .reviews {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 
     &__title {
@@ -15,7 +15,7 @@
         box-shadow: var(--shadowbox);
         margin-top: 20px;
         margin-bottom: 5px;
-        border-radius: 10px;
+        border-radius: 20px;
     }
 
     &__avg-rating {
@@ -60,7 +60,7 @@
 
     .comment {
         border: var(--border);
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: var(--shadowbox);
         padding: 15px;
 

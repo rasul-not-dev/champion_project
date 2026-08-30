@@ -10,6 +10,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('timetable/', include('timetable.urls')),
     path('reviews/', include('reviews.urls')),
+    path('payment/', include('payment.urls')),
 ]
 
 if settings.DEBUG:

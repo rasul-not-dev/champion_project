@@ -194,6 +194,11 @@ body::-webkit-scrollbar {
     gap: 10px;
     width: fit-content;
     transition: all 0.3s ease;
+    text-shadow: var(--textshadow);
+}
+
+.aside__link svg {
+    filter: drop-shadow(0 0 7px rgba(255, 215, 0, 0.2));
 }
 
 .aside__link:hover {
@@ -327,6 +332,7 @@ body::-webkit-scrollbar {
         font-size: 1.5625rem;
         font-size: clamp(1.5625rem, -0.1061776061776063rem + 2.8957528957528957vw, 2.5rem);
         color: var(--primary);
+        text-shadow: var(--textshadow);
     }
 
 }

@@ -89,8 +89,9 @@
         color: white;
     }
 
-    &__link {
-        margin-top: auto;
+    &__link:hover {
+        text-shadow: var(--textshadow);
+        transition: all .2s ease;
     }
 }
 

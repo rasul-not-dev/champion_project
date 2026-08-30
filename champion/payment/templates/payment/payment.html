@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}оплата{% endblock title %}
+
+{% block content %}
+
+<div class="payment">
+  <h1 class="payment__title">оплата тренировок</h1>
+  <div class="payment__membership membership">
+    <h2 class="membership__title">единый абонемент</h2>
+    <h3 class="membership__subtitle">для младших и старших групп</h3>
+    <span class="membership__price">{{ price_and_qr.price }}₽ / месяц</span>
+    <h2 class="membership__subtitle">первая тренировка бесплатно</h2>
+    <a href="{% url 'timetable' %}" class="membership__link">ознакомиться с расписанием</a>
+  </div>
+  <div class="payment__container">
+    <h2 class="payment__title payment__title--small">оплата по qr-коду</h2>
+    <p class="payment__text">в назначении платежа просьба<br>указать фио спротсмена и месяц</p>
+    <div class="payment__image-wrapper">
+      <img src="{{ price_and_qr.qr_code.url }}" class="payment__image" alt="qr код">
+    </div>
+  </div>
+</div>
+{% endblock content %}
