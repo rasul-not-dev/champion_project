@@ -18,9 +18,10 @@
     <input type="checkbox" id="burger-toggle" class="burger-toggle">
 
     <header class="header">
+      <img src="{% static 'images/image.png' %}" class="header__image" alt="">
       <div class="logo">
-        <img src="{% static 'images/logo.png' %}" alt="Логотип Чемпион" class="logo__image">
         <span class="logo__title">чемпион</span>
+        <span class="logo__subtitle">спортивный клуб</span>
       </div>
       <label for="burger-toggle" class="burger-menu">
         <div class="burger-menu__line"></div>
@@ -46,17 +47,9 @@
     </main>
 
     <footer class="footer">
-      <div class="contacts-icons">
-        {% for icon in social_media_icons %}
-        <a href="{{ icon.url_name }}" class="contacts-icons__link"><i class="{{ icon.icon }} contacts-icons__img" style="color: #262626;"></i></a>
-        {% endfor %}
-      </div>
-
-      <nav class="footer-nav">
-        {% for link in nav_links %}
-          <a href="{% url link.url_name %}" class="footer-nav__link">{{ link.title }}</a>
-        {% endfor %}
-      </nav>
+      {% for link in nav_links %}
+        <a href="{% url link.url_name %}" class="footer__link">{{ link.title }}</a>
+      {% endfor %}
     </footer>
 
   </div>
