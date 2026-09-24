@@ -48,7 +48,7 @@ body {
 }
 
 .main-content {
-    border: 1px solid var(--primary);
+    border: 0 1px 1px 1px solid var(--primary);
     padding: 20px;
     padding-bottom: 30px;
     color: var(--primary);
@@ -81,26 +81,28 @@ body::-webkit-scrollbar {
     margin-right: 3px;
 }
 
-.logo {
+.header__content {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-right: auto;
 }
 
-.logo__title {
+.header__title {
     font-size: 24px;
     font-weight: bold;
     color: var(--secondary);
     line-height: 0.8;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    display: block;
 }
 
-.logo__subtitle {
+.header__subtitle {
     font-size: 12px;
     font-weight: bold;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     color: var(--secondary);
+    display: block;
 }
 
 .burger-menu {

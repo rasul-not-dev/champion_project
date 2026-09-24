@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'timetable.apps.TimetableConfig',
     'reviews.apps.ReviewsConfig',
     'payment.apps.PaymentConfig',
+    'booking.apps.BookingConfig',
 
     # сторонние библиотеки
     'phonenumber_field',

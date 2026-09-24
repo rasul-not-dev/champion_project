@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}записаться{% endblock title %}
+
+{% block content %}
+
+<div class="booking">
+    <h1 class="booking__title">первое занятие</h1>
+
+    <div class="booking__contact booking-contact">
+        <div class="booking-contact__info">
+            <img src="{{ booking.image.url }}" alt="avatar" class="booking-contact__image">
+            <div class="booking-contact__container">
+                <span class="booking-contact__name">{{ booking.name }}</span>
+                <span class="booking-contact__number">{{ booking.number }}</span>
+            </div>
+        </div>
+        <a href="" class="booking-contact__button">позвонить</a>
+    </div>
+
+    <div class="booking__location booking-location">
+        <div class="booking-location__title">{{ booking.adres }}</div>
+        <div class="booking-location__wrapper">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec1518fd0e8cb57330481f380bd63fa9eb53c7fd7cb3d1fcb056bf4287ae07ff&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="booking__media booking-media">
+        <h2 class="booking-media__title">наши соцсети</h2>
+        {% for item in bookingMedia %}
+            <a href="{{ item.link }}" class="booking-media__item">
+                <i class="{{ item.icon }} booking-media__icon"></i>
+                <span class="booking-media__link">{{ item.name }}</span>
+                <i class="fa-solid fa-chevron-right booking-media__arrow"></i>
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="booking__numbers booking-numbers">
+        <h2 class="booking-numbers__title">номера тренеров</h2>
+        {% for item in bookingNumbers %}
+            <a href="tel:{{ item.number }}" class="booking-numbers__item">
+                <div class="booking-numbers__info">
+                    <span class="booking-numbers__name">{{ item.name }}</span>
+                    <span class="booking-numbers__number">{{ item.number }}</span>
+                </div>
+                <i class="fa-solid fa-chevron-right booking-media__arrow"></i>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

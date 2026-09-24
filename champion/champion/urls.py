@@ -11,6 +11,7 @@ urlpatterns = [
     path('timetable/', include('timetable.urls')),
     path('reviews/', include('reviews.urls')),
     path('payment/', include('payment.urls')),
+    path('booking/', include('booking.urls')),
 ]
 
 if settings.DEBUG:

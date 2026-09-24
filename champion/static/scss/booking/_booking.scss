@@ -1,0 +1,255 @@
+@mixin desktop {
+    @media (min-width: 922px) {
+        @content
+    }
+};
+
+@mixin mobile {
+    @media (max-width: 922px) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 922px) {
+        @content
+    }
+}
+
+.booking {
+
+    &__title {
+        font-size: var(--title);
+        color: var(--primary);
+        text-shadow: var(--textshadow);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__contact {
+        margin-bottom: 20px;
+    }
+
+    &__location {
+        margin-bottom: 20px;
+    }
+
+    &__media {
+        margin-bottom: 20px;
+    }
+}
+
+.booking-contact {
+
+    border-radius: 20px;
+    box-shadow: var(--shadowbox);
+    border: var(--border);
+    padding: 20px;
+
+    @include desktop {
+        // 0 --- 80
+        margin-inline: clamp(0rem, -3.202846975088968rem + 14.234875444839856vw, 5rem);
+    }
+
+    &__info {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+
+    &__image {
+        width: 50px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    &__name {
+        font-size: 20px;
+    }
+
+    &__number {
+        font-size: 16px;
+        color: white;
+    }
+
+    &__button {
+        padding: 10px;
+        border: var(--border);
+        box-shadow: var(--shadowbox);
+        text-shadow: var(--textshadow);
+        display: block;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        // font-weight: bold;
+        
+        &:hover {
+            transition: transform .2s ease;
+            transform: scale(1.01);
+        }
+    }
+}
+
+.booking-location {
+    border: var(--border);
+    box-shadow: var(--shadowbox);
+    border-radius: 20px;
+    padding: 20px;
+
+    @include desktop {
+        // 0 --- 80
+        margin-inline: clamp(0rem, -3.202846975088968rem + 14.234875444839856vw, 5rem);
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: clamp(1rem, 0.8398576512455516rem + 0.7117437722419928vw, 1.25rem);
+    }
+
+    &__wrapper {
+        border: solid 2px var(--primary);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 1/1;
+        max-height: 299px;
+    }
+}   
+
+.booking-media {
+
+    @include desktop {
+        // 0 --- 80
+        margin-inline: clamp(0rem, -3.202846975088968rem + 14.234875444839856vw, 5rem);
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: var(--textshadow);
+    }
+
+    &__item {
+        width: calc(100% + 20px);
+        position: relative;
+        right: 20px;
+        padding: 15px 20px;
+        border: var(--border);
+        border-left: none;
+        box-shadow: var(--shadowbox);
+        margin-top: 10px;
+        border-radius: 0 20px 20px 0;
+        display: flex;
+        transition: all .3s ease;
+
+        @include desktop {
+            border-radius: 20px;
+            margin-bottom: 15px;
+            width: 100%;
+            right: 0;
+            border: var(--border);
+        }
+
+        @include tablet {
+            border: var(--border);
+        }
+
+        &:hover {
+            @include mobile {
+                width: calc(100% + 25px);
+            }
+            
+            @include desktop {
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        margin-right: auto;
+    }
+
+    &__icon {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    &__link {
+        font-size: 16px;
+        text-shadow: var(--textshadow);
+    }
+}
+
+.booking-numbers {
+
+    @include desktop {
+        // 0 --- 80
+        margin-inline: clamp(0rem, -3.202846975088968rem + 14.234875444839856vw, 5rem);
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: var(--textshadow);
+    }
+
+    &__item {
+        border: var(--border);
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        margin-top: 10px;
+        display: flex;
+        padding: 10px 20px;
+        position: relative;
+        right: 20px;
+        width: calc(100% + 20px);
+        box-shadow: var(--shadowbox);
+        align-items: center;
+        transition: all .3s ease;
+
+        @include tablet {
+            border: var(--border);
+        }
+
+        @include desktop {
+            border-radius: 20px;
+            margin-bottom: 15px;
+            width: 100%;
+            right: 0;
+            border: var(--border);
+        }
+
+        &:hover {
+            @include mobile {
+                width: calc(100% + 25px);
+            }
+            
+            @include desktop {
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    &__info {
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__number {
+        font-size: 14px;
+        color: white;
+    }
+
+
+}
