@@ -28,7 +28,7 @@ class Contacts(models.Model):
 
 
 class GymGallery(models.Model):
-    photo = models.ImageField('фото', upload_to='gym_gallery')
+    photo = models.ImageField('фото', upload_to='gym_gallery/')
 
     class Meta():
         verbose_name = "Фотография зала"

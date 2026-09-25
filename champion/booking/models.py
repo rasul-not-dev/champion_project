@@ -3,12 +3,12 @@ from django.db import models
 class Booking(models.Model):
     image = models.ImageField('аватарка', upload_to='booking/')
     name = models.CharField('имя', max_length=50)
-    number = models.CharField('номер', max_length=15)
+    number = models.CharField('номер', max_length=20)
     adres = models.CharField('адрес', max_length=50)
 
     class Meta:
-        verbose_name = "запись"
-        verbose_name_plural = "записи"
+        verbose_name = "главный контакт"
+        verbose_name_plural = "главный контакт"
 
 class BookingMedia(models.Model):
     name = models.CharField('имя', max_length=50)

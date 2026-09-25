@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
   {% block extra_css_home_page %} {% endblock %}
-  <script src="https://kit.fontawesome.com/cecf21d759.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/cecf21d759.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
@@ -19,11 +19,12 @@
     <input type="checkbox" id="burger-toggle" class="burger-toggle">
 
     <header class="header">
-      <img src="{% static 'images/image.png' %}" class="header__image" alt="лого">
-      <div class="header__content">
+      <a href="{% url 'home' %}" class="header__image-link"><img src="{% static 'images/image.png' %}" class="header__image" alt="лого"></a>
+      <a class="header__content" href="{% url 'home' %}">
         <span class="header__title">чемпион</span>
         <span class="header__subtitle">спортивный клуб</span>
-      </div>
+      </a>
+      <a href="{% url 'booking' %}" class="header__booking-button">записаться</a>
       <label for="burger-toggle" class="burger-menu">
         <div class="burger-menu__line"></div>
         <div class="burger-menu__line"></div>
@@ -39,6 +40,7 @@
               <a href="{% url link.url_name %}" class="aside__link"><i class="{{ link.icon }}"></i> {{ link.title }}</a>
           {% endfor %}
         </div>
+        <a href="{% url 'booking' %}" class="aside__button">записаться</a>
       </nav>
     </aside>
 

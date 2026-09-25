@@ -3,7 +3,7 @@
 /* ======= БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ ========= */
 :root {
   --primary: #fff400;
-  --secondary: #262626;
+  --secondary: rgb(38, 38, 38);
   --shadowbox: 0 0px 12px 8px rgba(255, 244, 0, 0.08);
   --border: solid 1px var(--primary);
   --textshadow: 0 0 8px rgba(255, 215, 0, 0.4);
@@ -40,8 +40,7 @@ body {
   background-color: var(--secondary);
   position: relative;
   max-width: 1440px;
-  margin-top: 50px;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   min-height: 500px;
 }
 
@@ -76,6 +75,7 @@ body::-webkit-scrollbar {
 .header__image {
   width: 30px;
   margin-right: 3px;
+  margin-top: 2px;
 }
 
 .header__content {
@@ -102,6 +102,17 @@ body::-webkit-scrollbar {
   display: block;
 }
 
+.header__booking-button {
+  font-weight: bold;
+  padding: 4px 7px;
+  border: 2px solid var(--secondary);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.header__booking-button:hover {
+  transform: scale(1.03);
+}
+
 .burger-menu {
   width: 30px;
   height: 25px;
@@ -110,6 +121,7 @@ body::-webkit-scrollbar {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin-left: 20px;
 }
 
 .burger-menu__line {
@@ -157,6 +169,7 @@ body::-webkit-scrollbar {
 
 .aside__menu {
   padding-block: 30px;
+  position: relative;
 }
 
 .aside__list {
@@ -188,6 +201,29 @@ body::-webkit-scrollbar {
 
 .aside__link:hover {
   transform: translateX(5px);
+}
+
+.aside__button {
+  display: block;
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  background-color: var(--primary);
+  box-shadow: var(--shadowbox);
+  text-shadow: var(--textshadow);
+  transition: all 0.3s ease;
+}
+.aside__button:hover {
+  transform: translateX(-50%) scale(1.03);
 }
 
 /* ============== ЛОГИКА АНИМАЦИИ НАВИГАЦИИ =============== */
@@ -294,6 +330,11 @@ body::-webkit-scrollbar {
     color: var(--primary);
     text-shadow: var(--textshadow);
   }
+  .aside__button {
+    border: var(--border);
+    color: var(--primary);
+    background-color: var(--secondary);
+  }
 }
 /* ============================================== */
 /* ================= HOME-PAGE ================== */
@@ -312,7 +353,6 @@ body::-webkit-scrollbar {
 }
 
 .hero__container {
-  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -320,6 +360,7 @@ body::-webkit-scrollbar {
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 2/1;
+  margin-bottom: 20px;
 }
 
 .hero__info {
@@ -358,24 +399,6 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.hero__button {
-  border: solid 1px var(--primary);
-  border-radius: 10px;
-  padding-block: 5px 6px;
-  padding-inline: 10px;
-  display: block;
-  width: fit-content;
-  margin-inline: auto;
-  font-size: 0.625rem;
-  font-size: clamp(0.625rem, 0.2232142857rem + 1.7857142857vw, 1.25rem);
-  box-shadow: var(--shadowbox);
-}
-
-.hero__button:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease;
 }
 
 /* === trainers === */
@@ -625,9 +648,6 @@ input[type=radio] {
   }
   .gym-gallery__image-wrapper {
     aspect-ratio: 2/1;
-  }
-  .hero__button {
-    display: none;
   }
   .contacts__info {
     padding-left: 15px;
