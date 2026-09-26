@@ -68,10 +68,10 @@
             border-radius: 5px;
             font-size: clamp(0.625rem, 0.5rem + 0.5555555555555556vw, 1rem);
             font-weight: bold;
+            transition: transform .2s ease;
 
             &:hover {
                 transform: scale(1.02);
-                transition: transform .2s ease;
             }
         }
     }

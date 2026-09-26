@@ -734,6 +734,7 @@ input[type=radio] {
   grid-template-columns: repeat(6, 1fr);
   gap: 12px;
   text-align: center;
+  overflow-x: auto;
   padding: 16px;
   border-top: 1px solid rgba(255, 230, 0, 0.15);
 }
@@ -809,10 +810,10 @@ input[type=radio] {
   border-radius: 5px;
   font-size: clamp(0.625rem, 0.5rem + 0.5555555556vw, 1rem);
   font-weight: bold;
+  transition: transform 0.2s ease;
 }
 .payment .membership__link:hover {
   transform: scale(1.02);
-  transition: transform 0.2s ease;
 }
 .payment__container {
   border: var(--border);
@@ -1196,6 +1197,40 @@ input[type=radio] {
   transition: all 0.2s ease;
 }
 
+.news-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+.news-pagination__button {
+  padding: 8px 16px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  color: var(--secondary);
+  background-color: var(--primary);
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadowbox);
+}
+.news-pagination__button:hover:not(.news-pagination__button--disabled) {
+  transform: scale(1.05);
+  text-shadow: var(--textshadow);
+}
+.news-pagination__button--disabled {
+  cursor: not-allowed;
+  border-color: var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: none;
+}
+.news-pagination__info {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
 .reviews {
   max-width: 800px;
   margin: 0 auto;
@@ -1255,6 +1290,10 @@ input[type=radio] {
   box-shadow: var(--shadowbox);
   padding: 15px;
 }
+.reviews .comment--green {
+  border-color: greenyellow;
+  box-shadow: 0 0px 12px 8px rgba(172, 255, 47, 0.089);
+}
 .reviews .comment__header {
   display: flex;
   gap: 10px;
@@ -1273,14 +1312,35 @@ input[type=radio] {
 .reviews .comment__star--enabled {
   color: var(--primary);
 }
+.reviews .comment__star--green {
+  color: greenyellow;
+}
 .reviews .comment__name {
   font-size: 14px;
   font-weight: regular;
   text-shadow: var(--textshadow);
 }
+.reviews .comment__name--green {
+  color: greenyellow;
+  -webkit-user-select: none; /* Для Safari и старых версий WebKit/Blink */
+  user-select: none; /* Стандартное свойство */
+}
 .reviews .comment__text {
   font-size: 14px;
   color: white;
+  word-break: break-word;
+}
+.reviews .comment__admin-note {
+  margin-top: 5px;
+}
+.reviews .comment__admin-name {
+  color: yellowgreen;
+  font-size: 14px;
+  text-shadow: var(--textshadow);
+}
+.reviews .comment__admin-text {
+  color: white;
+  font-size: 14px;
 }
 
 .create {

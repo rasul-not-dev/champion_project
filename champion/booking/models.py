@@ -4,7 +4,7 @@ class Booking(models.Model):
     image = models.ImageField('аватарка', upload_to='booking/')
     name = models.CharField('имя', max_length=50)
     number = models.CharField('номер', max_length=20)
-    adres = models.CharField('адрес', max_length=50)
+    adress = models.CharField('адрес', max_length=50)
 
     class Meta:
         verbose_name = "главный контакт"
@@ -23,8 +23,8 @@ class BookingMedia(models.Model):
         verbose_name_plural = 'соцсети'
 
 class BookingNumbers(models.Model):
-    name = models.CharField('фио теренера')
-    number = models.CharField('номер тренера')
+    name = models.CharField('фио теренера', max_length=50)
+    number = models.CharField('номер тренера', max_length=50)
 
     def __str__(self):
         return self.name

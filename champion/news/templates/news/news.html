@@ -21,6 +21,28 @@
         <p class="news-page__news-empty-text">новостей пока нет</p>
       {% endfor %}
     </div>
+
+    <!-- ПАГИНАЦИЯ -->
+    {% if news.has_other_pages %}
+    <nav class="news-pagination">
+      {% if news.has_previous %} 
+        <a href="?page={{ news.previous_page_number }}" class="news-pagination__button">‹</a>
+      {% else %}
+        <span class="news-pagination__button news-pagination__button--disabled">‹</span>
+      {% endif %}
+
+      <span class="news-pagination__info">
+        Страница {{ news.number }} из {{ news.paginator.num_pages }}
+      </span>
+
+      {% if news.has_next %}
+        <a href="?page={{ news.next_page_number }}" class="news-pagination__button">›</a>
+      {% else %}
+        <span class="news-pagination__button news-pagination__button--disabled">›</span>
+      {% endif %}
+    </nav>
+    {% endif %}
+
   </div>
 {% endblock %}
 

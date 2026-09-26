@@ -75,6 +75,7 @@
             grid-template-columns: repeat(6, 1fr);
             gap: 12px;
             text-align: center;
+            overflow-x: auto;
             padding: 16px;
             border-top: 1px solid rgba(255, 230, 0, 0.15);
         }

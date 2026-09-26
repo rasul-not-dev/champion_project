@@ -9,6 +9,7 @@ class Reviews(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
     created_at = models.DateTimeField('время', auto_now_add=True)
+    admin_note = models.CharField('ответ админа', blank=True)
 
     def __str__(self):
         return f'{self.name} - {self.rating}★'

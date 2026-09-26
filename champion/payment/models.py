@@ -2,7 +2,7 @@ from django.db import models
 
 class Price(models.Model):
     price = models.PositiveIntegerField('цена в месяц')
-    qr_code = models.ImageField('qr код', upload_to='qr_code/', blank=True)
+    qr_code = models.ImageField('qr код', upload_to='qr_code/')
 
     class Meta():
         verbose_name = 'цена и qr код'
