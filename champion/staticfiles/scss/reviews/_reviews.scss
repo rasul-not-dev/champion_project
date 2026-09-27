@@ -1,0 +1,132 @@
+.reviews {
+    max-width: 800px;
+    margin: 0 auto;
+
+    &__title {
+        font-weight: bold;
+        text-shadow: var(--textshadow);
+        text-align: center;
+        font-size: var(--title);
+    }
+    
+    &__summary {
+        border: var(--border);
+        padding: 15px 20px;
+        box-shadow: var(--shadowbox);
+        margin-top: 20px;
+        margin-bottom: 5px;
+        border-radius: 20px;
+    }
+
+    &__avg-rating {
+        text-align: center;
+        font-weight: bold;
+        text-shadow: var(--textshadow);
+        display: block;
+        margin-bottom: 10px;
+        font-size: 19px;
+    }
+
+    &__button {
+        display: block;
+        border: var(--border);
+        box-shadow: var(--shadowbox);
+        text-shadow: var(--textshadow);
+        font-weight: bold;
+        width: max(fit-content, 75%);
+        padding: 5px 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+        font-size: 20px;
+        text-align: center;
+
+        &:hover {
+            transform: scale(1.01);
+            transition: transform .2s ease;
+        }
+    }
+
+    &__comments {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    &__comment {
+        width: 100%;
+    }
+
+    .comment {
+        border: var(--border);
+        border-radius: 20px;
+        box-shadow: var(--shadowbox);
+        padding: 15px;
+
+        &--green {
+            border-color: greenyellow;
+            box-shadow: 0 0px 12px 8px rgba(172, 255, 47, 0.089);
+        }
+
+        &__header {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        &__rating {
+            font-size: 16px;
+        }
+
+        &__star {
+            text-shadow: var(--textshadow);
+
+            &--disable {
+                color: gray;
+            }
+
+            &--enabled {
+                color: var(--primary);
+            }
+
+            &--green {
+                color: greenyellow;
+            }
+        }
+
+        &__name {
+            font-size: 14px;
+            font-weight: regular;
+            text-shadow: var(--textshadow);
+
+            &--green {
+                color: greenyellow;
+                -webkit-user-select: none; /* Для Safari и старых версий WebKit/Blink */
+                user-select: none;         /* Стандартное свойство */
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+            color: white;
+            word-break: break-word;
+        }
+
+        &__admin-note {
+            margin-top: 5px;
+        }
+
+        &__admin-name {
+            color: yellowgreen;
+            font-size: 14px;
+            text-shadow: var(--textshadow);
+        }
+
+        &__admin-text {
+            color: white;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@mixin tablet {
+    @media (min-width: 500px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+
+.news-page {
+    &__title {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 1.0996441281138791rem + 1.779359430604982vw, 2.125rem);
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: var(--textshadow);
+    }
+
+    &__grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 0 auto;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__news-empty-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.news-card {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    box-shadow: var(--shadowbox);
+    background-color: var(--secondary);
+
+    &__image-wrapper {
+        overflow: hidden;
+        height: 200px;
+        border-radius: 20px;
+        border-bottom: 1px solid var(--primary);
+        flex-shrink: 0;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+
+    &__info {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+    }
+
+    &__text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: white;
+    }
+
+    &__link:hover {
+        text-shadow: var(--textshadow);
+        transition: all .2s ease;
+    }
+}
+
+.news-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+
+    &__button {
+        padding: 8px 16px;
+        border: 1px solid var(--primary);
+        border-radius: 10px;
+        color: var(--secondary);
+        background-color: var(--primary);
+        font-weight: bold;
+        // font-size: ;
+        transition: all 0.2s ease;
+        box-shadow: var(--shadowbox);
+
+        &:hover:not(&--disabled) {
+            transform: scale(1.05);
+            text-shadow: var(--textshadow);
+        }
+
+        &--disabled {
+            cursor: not-allowed;
+            border-color: var(--primary);
+            background-color: transparent;
+            color: var(--primary);
+            box-shadow: none;
+        }
+    }
+
+    &__info {
+        color: white;
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+}
+

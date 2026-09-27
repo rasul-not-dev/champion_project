@@ -1,0 +1,382 @@
+
+/* ============================================== */
+/* ================= HOME-PAGE ================== */
+/* ============================================== */
+
+/* === hero === */
+
+.hero {
+    margin-bottom: 30px;
+}
+
+.hero__title {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.5391459074733096rem + 4.270462633451958vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: solid 1px var(--primary);
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    margin-bottom: 20px;
+}
+
+.hero__info {
+    display: flex;
+    flex-direction: column;
+    padding-block: 12px 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3%;
+}
+
+.hero__title--small {
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.039145907473309594rem + 4.270462633451958vw, 2.5rem);
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.hero__text {
+    font-size: 0.625rem;
+    font-size: clamp(0.625rem, 0.02446619217081858rem + 2.669039145907473vw, 1.5625rem);
+    color: white;
+}
+
+.hero__image-wrapper {
+    width: 50%;
+    border: solid 1px var(--primary);
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// .hero__button {
+//     border: solid 1px var(--primary);
+//     border-radius: 10px;
+//     padding-block: 5px 6px;
+//     padding-inline: 10px;
+//     display: block;
+//     width: fit-content;
+//     margin-inline: auto;
+//     font-size: 0.625rem;
+//     font-size: clamp(0.625rem, 0.22321428571428575rem + 1.7857142857142856vw, 1.25rem);
+//     box-shadow: var(--shadowbox);
+// }
+
+// .hero__button:hover {
+//     transform: scale(1.05);
+//     transition: all 0.3s ease;
+// }
+
+
+/* === trainers === */
+
+.trainers {
+    margin-bottom: 30px;
+}
+
+.trainers__title {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.5391459074733096rem + 4.270462633451958vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trainers__slider {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    border: solid #FFF400 1px;
+    margin-bottom: 15px;
+}
+
+.trainers__slides-wrapper {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.trainers__slide {
+    min-width: 100%;
+    aspect-ratio: 2 / 1;
+}
+
+.trainer-card {
+    display: flex;
+    gap: 20px;
+}
+
+.trainer-card__image-wrapper {
+    width: 40%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.trainer-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trainer-card__info {
+    padding-block: 5px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.trainer-card__name {
+    font-size: 0.75rem;
+    font-size: clamp(0.75rem, -0.010676156583629748rem + 3.3807829181494657vw, 1.9375rem);
+    font-weight: bold;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.trainer-card__description {
+    font-size: 0.5625rem;
+    font-size: clamp(0.5625rem, 0.0020017793594305777rem + 2.491103202846975vw, 1.4375rem);
+    line-height: 1.3;
+    color: #fff;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.trainers__controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.trainers__control-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 2px var(--primary);
+    cursor: pointer;
+    box-shadow: var(--shadowbox);
+}
+
+
+/* === contacts === */
+
+.contacts {
+    margin-bottom: 30px;
+}
+
+.contacts__title {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.5391459074733096rem + 4.270462633451958vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacts__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 170px;
+    aspect-ratio: 2 / 1;
+}
+
+.contacts__info {
+    padding: 10px 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border: solid 1px var(--primary);
+    border-radius: 20px;
+}
+
+.contacts__contact {
+    display: block;
+}
+
+.contacts__post {
+    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 0.02935943060498214rem + 3.202846975088968vw, 1.875rem);
+    margin-bottom: 5px;
+}
+
+.contacts__name, .contacts__number {
+    color: white;
+    font-size: 0.625rem;
+    font-size: clamp(0.625rem, 0.02446619217081858rem + 2.669039145907473vw, 1.5625rem);
+}
+
+.contacts__name {
+    margin-bottom: 2px;
+}
+
+.contacts__geotag {
+    border: solid 1px var(--primary);
+    border-radius: 20px;
+    width: 55%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* === gym-gallery === */
+
+.gym-gallery__title {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.5391459074733096rem + 4.270462633451958vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gym-gallery__slider {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    border: solid #FFF400 1px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.gym-gallery__slides-wrapper {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.gym-gallery__slide {
+    min-width: 100%;
+}
+
+.gym-gallery__image-wrapper {
+    width: 100%;
+    aspect-ratio: 2 / 1.3;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gym-gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gym-gallery__controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gym-gallery__control-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 2px var(--primary);
+    cursor: pointer;
+    box-shadow: var(--shadowbox);
+}
+
+.hero__container,
+.trainers__slider,
+.contacts__geotag,
+.contacts__info,
+.gym-gallery__slider {
+    box-shadow: var(--shadowbox);
+}
+
+@media (min-width: 768px) {
+
+    .contacts__info {
+        padding-left: 20px;
+    }
+}
+
+@media (min-width: 922px) {
+
+    .home-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 30px;
+    }
+    
+    .home-page > * {
+        min-width: 0;
+    }
+    
+    .trainers {
+        order: 1;
+        margin-bottom: 0;
+    }
+
+    .gym-gallery {
+        order: 2;
+        margin-bottom: 0;
+    }
+
+    .hero, .contacts {
+        margin-bottom: 0;
+    }
+
+    .gym-gallery__image-wrapper {
+        aspect-ratio: 2 / 1;
+    }
+
+    .contacts__info {
+        padding-left: 15px;
+    }
+
+    .hero__title,
+    .trainers__title,
+    .contacts__title,
+    .gym-gallery__title {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 0.8325289575289575rem + 1.1583011583011584vw, 1.875rem);
+        text-shadow: var(--textshadow);
+    }
+
+    .hero__title--small,
+    .trainer-card__name,
+    .contacts__post {
+        font-size: 0.75rem;
+        font-size: clamp(0.75rem, -0.13996138996138996rem + 1.5444015444015444vw, 1.25rem);
+    }
+
+    .hero__text,
+    .contacts__name,
+    .contacts__number {
+        font-size: 0.625rem;
+        font-size: clamp(0.625rem, 0.06877413127413123rem + 0.9652509652509652vw, 0.9375rem);
+    }
+
+    .trainer-card__description {
+        font-size: 0.5625rem;
+        font-size: clamp(0.5625rem, -0.1049710424710425rem + 1.1583011583011584vw, 0.9375rem);
+    }
+
+}
