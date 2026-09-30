@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+<!-- {% load static %} -->
+
+{% block title %}404{% endblock title %}
+
+{% block content %}
+
+<div class="not-found">
+    <h1 class="not-found__title">страница не найдена</h1>
+    <img src="{% static 'images/not-found.png' %}" alt="страница не найдена" class="not-found__image">
+    <p class="not-found__text">Запрашиваемый адрес недоступен. Страница была удалена, перемещена или никогда не существовала. Пожалуйста, проверьте корректность URL-адреса.</p>
+    <a href="/" class="not-found__button">на главную</a>
+</div>
+
+{% endblock content %}
