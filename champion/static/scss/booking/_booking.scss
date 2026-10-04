@@ -101,7 +101,7 @@
     border: var(--border);
     box-shadow: var(--shadowbox);
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
 
     @include desktop {
         // 0 --- 80
