@@ -872,6 +872,9 @@ input[type=radio] {
 .booking__contact {
   margin-bottom: 20px;
 }
+.booking__error {
+  margin-bottom: 20px;
+}
 .booking__location {
   margin-bottom: 20px;
 }
@@ -1070,6 +1073,36 @@ input[type=radio] {
 .booking-numbers__number {
   font-size: 14px;
   color: white;
+}
+
+.booking-error {
+  border-radius: 20px;
+  box-shadow: var(--shadowbox);
+  border: var(--border);
+  padding: 20px;
+}
+@media (min-width: 922px) {
+  .booking-error {
+    margin-inline: clamp(0rem, -3.2028469751rem + 14.2348754448vw, 5rem);
+  }
+}
+.booking-error__text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.booking-error__button {
+  padding: 10px;
+  border: var(--border);
+  box-shadow: var(--shadowbox);
+  text-shadow: var(--textshadow);
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.booking-error__button:hover {
+  transition: transform 0.2s ease;
+  transform: scale(1.01);
 }
 
 .not-found {

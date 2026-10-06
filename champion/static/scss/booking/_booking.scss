@@ -30,6 +30,10 @@
         margin-bottom: 20px;
     }
 
+    &__error {
+        margin-bottom: 20px;
+    }
+
     &__location {
         margin-bottom: 20px;
     }
@@ -250,6 +254,38 @@
         font-size: 14px;
         color: white;
     }
+}
 
+.booking-error {
+    border-radius: 20px;
+    box-shadow: var(--shadowbox);
+    border: var(--border);
+    padding: 20px;
 
+    @include desktop {
+        // 0 --- 80
+        margin-inline: clamp(0rem, -3.202846975088968rem + 14.234875444839856vw, 5rem);
+    }
+
+    &__text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__button {
+        padding: 10px;
+        border: var(--border);
+        box-shadow: var(--shadowbox);
+        text-shadow: var(--textshadow);
+        display: block;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        // font-weight: bold;
+        
+        &:hover {
+            transition: transform .2s ease;
+            transform: scale(1.01);
+        }
+    }
 }

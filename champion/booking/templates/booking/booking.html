@@ -7,16 +7,23 @@
 <div class="booking">
     <h1 class="booking__title">первое занятие</h1>
 
-    <div class="booking__contact booking-contact">
-        <div class="booking-contact__info">
-            <img src="{{ booking.image.url }}" alt="avatar" class="booking-contact__image">
-            <div class="booking-contact__container">
-                <span class="booking-contact__name">{{ booking.name }}</span>
-                <span class="booking-contact__number">{{ booking.number }}</span>
+    {% if booking %}
+        <div class="booking__contact booking-contact">
+            <div class="booking-contact__info">
+                <img src="{{ booking.image.url }}" alt="avatar" class="booking-contact__image">
+                <div class="booking-contact__container">
+                    <span class="booking-contact__name">{{ booking.name }}</span>
+                    <span class="booking-contact__number">{{ booking.number }}</span>
+                </div>
             </div>
+            <a href="tel:{{ booking.number }}" class="booking-contact__button">позвонить</a>
         </div>
-        <a href="tel:{{ booking.number }}" class="booking-contact__button">позвонить</a>
-    </div>
+    {% else %}
+        <div class="booking__error booking-error">
+            <p class="booking-error__text">ознакомьтесь с контактом<br>руководителя на главной странице</p>
+            <a href="{% url 'home' %}" class="booking-error__button">на главную</a>
+        </div>
+    {% endif %}
 
     <div class="booking__location booking-location">
         <div class="booking-location__title">{{ booking.adress }}</div>
