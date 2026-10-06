@@ -98,7 +98,7 @@
       <div class="contacts__info">
         {% for contact in contacts %}
         <a href='tel:{{contact.number}}' class="contacts__contact">
-          <h3 class="contacts__post">{{ contact.post|safe }}</h3>
+          <h3 class="contacts__post">{{ contact.post }}<br>ск "чемпион"</h3>
           <p class="contacts__name">{{ contact.name }}</p>
           <p class="contacts__number">{{ contact.number }}</p>
         </a>
