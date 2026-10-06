@@ -800,6 +800,10 @@ input[type=radio] {
   text-shadow: var(--textshadow);
   font-weight: bold;
 }
+.payment .membership__price--error {
+  font-size: clamp(0.75rem, 0.5898576512rem + 0.7117437722vw, 1rem);
+  margin-bottom: 20px;
+}
 .payment .membership__link {
   display: block;
   margin: 0 auto;
@@ -850,6 +854,12 @@ input[type=radio] {
   display: block;
   object-fit: cover;
   width: 100%;
+}
+.payment__error {
+  color: var(--primary);
+  font-size: clamp(0.625rem, 0.4648576512rem + 0.7117437722vw, 0.875rem);
+  text-align: center;
+  text-shadow: var(--textshadow);
 }
 
 .booking__title {

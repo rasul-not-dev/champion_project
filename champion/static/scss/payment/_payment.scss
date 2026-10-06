@@ -6,6 +6,7 @@
 
 .payment {
     padding-inline: 20px;
+
     &__title {
         color: var(--primary);
         text-shadow: var(--textshadow);
@@ -56,6 +57,12 @@
             text-shadow: var(--textshadow);
             font-weight: bold;
             // margin-bottom: 10px;
+
+            &--error {
+                // 12 --- 16
+                font-size: clamp(0.75rem, 0.5898576512455516rem + 0.7117437722419928vw, 1rem);
+                margin-bottom: 20px;
+            }
         }
 
         &__link {
@@ -113,6 +120,14 @@
         display: block;
         object-fit: cover;
         width: 100%;
+    }
+
+    &__error {
+        color: var(--primary);
+        // 10 --- 14
+        font-size: clamp(0.625rem, 0.4648576512455516rem + 0.7117437722419928vw, 0.875rem);
+        text-align: center;
+        text-shadow: var(--textshadow);
     }
 
 }
