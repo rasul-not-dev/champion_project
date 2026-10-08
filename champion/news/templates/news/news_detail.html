@@ -12,7 +12,7 @@
             <img src="{{ news.image.url }}" alt="фотография новости" class="news-detail__image">
         </div>
         <div class="news-detail__info">
-            <p class="news-detail__text"><span class="news-detail__date">{{ news.created_at|date:"d.m.Y" }}</span> {{ news.content }}</p>
+            <p class="news-detail__text"><span class="news-detail__date">{{ news.created_at|date:"d.m.Y" }}</span> {{ news.content|linebreaksbr }}</p>
         </div>
     </div>
 </div>
