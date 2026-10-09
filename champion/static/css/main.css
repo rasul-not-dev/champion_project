@@ -203,29 +203,6 @@ body::-webkit-scrollbar {
   transform: translateX(5px);
 }
 
-.aside__button {
-  display: block;
-  position: absolute;
-  top: calc(100% + 15px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  padding: 10px 15px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 10px;
-  border: 2px solid var(--secondary);
-  color: var(--secondary);
-  background-color: var(--primary);
-  box-shadow: var(--shadowbox);
-  text-shadow: var(--textshadow);
-  transition: all 0.3s ease;
-}
-.aside__button:hover {
-  transform: translateX(-50%) scale(1.03);
-}
-
 /* ============== ЛОГИКА АНИМАЦИИ НАВИГАЦИИ =============== */
 .burger-toggle {
   display: none;
